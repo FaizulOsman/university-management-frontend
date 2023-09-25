@@ -1,6 +1,5 @@
 "use client";
-
-import { Col, Row, Button } from "antd";
+import { Button, Col, Input, Row } from "antd";
 import loginImage from "../../assets/login-image.png";
 import Image from "next/image";
 import Form from "@/components/Forms/Form";
@@ -18,26 +17,35 @@ const LoginPage = () => {
       console.log(data);
     } catch (err) {}
   };
-
   return (
     <Row
       justify="center"
       align="middle"
       style={{
-        maxHeight: "100vh",
+        minHeight: "100vh",
       }}
     >
       <Col sm={12} md={16} lg={10}>
         <Image src={loginImage} width={500} alt="login image" />
       </Col>
       <Col sm={12} md={8} lg={8}>
-        <h1 style={{ margin: "15px 0" }}>First login your account</h1>
+        <h1
+          style={{
+            margin: "15px 0px",
+          }}
+        >
+          First login your account
+        </h1>
         <div>
           <Form submitHandler={onSubmit}>
             <div>
               <FormInput name="id" type="text" size="large" label="User Id" />
             </div>
-            <div style={{ margin: "15px 0" }}>
+            <div
+              style={{
+                margin: "15px 0px",
+              }}
+            >
               <FormInput
                 name="password"
                 type="password"
