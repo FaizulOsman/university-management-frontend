@@ -10,7 +10,7 @@ interface IInput {
   value?: string | string[] | undefined;
   id?: string;
   placeholder?: string;
-  validation: object;
+  validation?: object;
   label?: string;
 }
 
