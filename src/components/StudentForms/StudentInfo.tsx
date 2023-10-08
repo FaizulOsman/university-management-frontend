@@ -12,17 +12,8 @@ import {
 import ACDepartmentField from "../Forms/ACDepartmentField";
 import ACFacultyField from "../Forms/ACFacultyField";
 import ACSemesterField from "../Forms/ACSemesterField";
-import { useState } from "react";
 
 const StudentInfo = () => {
-  const [acDepartmentId, setAcDepartmentId] = useState<string>();
-
-  const query: Record<string, any> = {};
-
-  if (!!acDepartmentId) {
-    query["academicDepartmentId"] = acDepartmentId;
-  }
-
   return (
     <div
       style={{
@@ -100,7 +91,6 @@ const StudentInfo = () => {
           <ACDepartmentField
             name="student.academicDepartment"
             label="Academic Department"
-            onChange={(el) => setAcDepartmentId(el)}
           />
         </Col>
         <Col

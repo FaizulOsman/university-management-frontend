@@ -10,17 +10,8 @@ import UMBreadCrumb from "@/components/ui/UMBreadCrumb";
 import { useAddOfferedCourseMutation } from "@/redux/api/offeredCourseApi";
 import { useSemesterRegistrationsQuery } from "@/redux/api/semesterRegistrationApi";
 import { Button, Col, Row, message } from "antd";
-import { useState } from "react";
 
 const CreateOfferedCoursePage = () => {
-  const [acDepartmentId, setAcDepartmentId] = useState<string>();
-
-  const query: Record<string, any> = {};
-
-  if (!!acDepartmentId) {
-    query["academicDepartmentId"] = acDepartmentId;
-  }
-
   const [addOfferedCourse] = useAddOfferedCourseMutation();
 
   const { data, isLoading } = useSemesterRegistrationsQuery({
@@ -79,7 +70,6 @@ const CreateOfferedCoursePage = () => {
               <ACDepartmentField
                 name="academicDepartmentId"
                 label="Academic department"
-                onChange={(el) => setAcDepartmentId(el)}
               />
             </div>
           </Col>

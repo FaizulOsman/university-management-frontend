@@ -12,18 +12,9 @@ import UploadImage from "@/components/ui/UploadImage";
 import { bloodGroupOptions, genderOptions } from "@/constants/global";
 import { useAddFacultyWithFormDataMutation } from "@/redux/api/facultyApi";
 import { Button, Col, Row, message } from "antd";
-import { useState } from "react";
 
 const CreateFacultyPage = () => {
   const [addFacultyWithFormData] = useAddFacultyWithFormDataMutation();
-
-  const [acDepartmentId, setAcDepartmentId] = useState<string>();
-
-  const query: Record<string, any> = {};
-
-  if (!!acDepartmentId) {
-    query["academicDepartmentId"] = acDepartmentId;
-  }
 
   const adminOnSubmit = async (values: any) => {
     const obj = { ...values };
@@ -119,7 +110,6 @@ const CreateFacultyPage = () => {
               <ACDepartmentField
                 name="faculty.academicDepartment"
                 label="Academic Department"
-                onChange={(el) => setAcDepartmentId(el)}
               />
             </Col>
 
